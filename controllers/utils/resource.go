@@ -29,6 +29,7 @@ func NewDeployment(app *v1beta1.App) *appv1.Deployment {
 	d := &appv1.Deployment{}
 	err := yaml.Unmarshal(parseTemplate("deployment", app), d)
 	if err != nil {
+		println("创建出现异常")
 		panic(err)
 	}
 	return d

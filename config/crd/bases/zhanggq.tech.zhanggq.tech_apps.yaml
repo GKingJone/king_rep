@@ -39,7 +39,7 @@ spec:
                 description: Foo is an example field of App. Edit app_types.go to
                   remove/update Foo string `json:"foo,omitempty"`
                 type: boolean
-              enable_server:
+              enable_service:
                 type: boolean
               image:
                 type: string
@@ -47,7 +47,7 @@ spec:
                 format: int32
                 type: integer
             required:
-            - enable_server
+            - enable_service
             - image
             - replicas
             type: object

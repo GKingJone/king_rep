@@ -31,7 +31,7 @@ type AppSpec struct {
 	// Foo is an example field of App. Edit app_types.go to remove/update
 	//Foo string `json:"foo,omitempty"`
 	EnableIngress bool   `json:"enable_ingress,omitempty"`
-	EnableServer  bool   `json:"enable_server"`
+	EnableServer  bool   `json:"enable_service"`
 	Replicas      int32  `json:"replicas"`
 	Image         string `json:"image"`
 }
