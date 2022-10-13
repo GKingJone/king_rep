@@ -13,6 +13,7 @@ import (
 func parseTemplate(templateName string, app *v1beta1.App) []byte {
 	tmpl, err := template.ParseFiles("controllers/template/" + templateName + ".yml")
 	if err != nil {
+		println("创建temp文件失败")
 		panic(err)
 	}
 	b := new(bytes.Buffer)
@@ -29,6 +30,7 @@ func NewDeployment(app *v1beta1.App) *appv1.Deployment {
 	d := &appv1.Deployment{}
 	err := yaml.Unmarshal(parseTemplate("deployment", app), d)
 	if err != nil {
+		println("创建出现异常")
 		panic(err)
 	}
 	return d
